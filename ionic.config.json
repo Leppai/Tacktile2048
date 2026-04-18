@@ -1,0 +1,7 @@
+{
+  "name": "Puzzle2048",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
