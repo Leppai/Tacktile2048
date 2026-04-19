@@ -1,20 +1,215 @@
-<ion-header [translucent]="true">
+<!-- HEADER -->
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button fill="clear">
+        <ion-icon name="apps-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="title-center">2048</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="openSettings()">
+        <ion-icon name="settings-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<!-- CONTENT -->
+<ion-content fullscreen>
+
+  <!-- APP TITLE -->
+  <div class="hero-section">
+    <p class="subtitle">WELCOME BACK TO</p>
+
+    <h2 class="app-name">
+      Tactile<span>2048</span>
+    </h2>
+
+    <!-- SCORE CARD -->
+    <ion-card class="score-card">
+      <ion-card-content>
+        <p class="score-label">BEST SCORE</p>
+        <h3 class="score-value">{{ bestScore }}</h3>
+      </ion-card-content>
+    </ion-card>
   </div>
+
+
+  <!-- GRID SECTION -->
+  <div class="grid-section">
+
+    <h3 class="section-title">Choose Grid</h3>
+    <p class="section-subtitle">Select your logical challenge</p>
+
+
+    <!-- GRID OPTIONS -->
+    <ion-card 
+    class="grid-card"
+    [class.active]="selectedGrid === 4"
+    (click)="selectGrid(4)">
+      <ion-card-content>
+
+      <div class="grid-preview grid-4">
+
+        <div class="cell"></div>
+        <div class="cell tile t1"></div>
+        <div class="cell tile t1"></div>
+        <div class="cell"></div>
+
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell tile t2"></div>
+        <div class="cell"></div>
+
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+      </div>
+
+        <p class="grid-label">CLASSIC</p>
+        <h4 class="grid-size">4x4</h4>
+
+      </ion-card-content>
+    </ion-card>
+
+
+
+    <ion-card 
+    class="grid-card"
+    [class.active]="selectedGrid === 5"
+    (click)="selectGrid(5)">
+
+      <ion-card-content>
+
+      <div class="grid-preview grid-5">
+
+        <div class="cell"></div>
+        <div class="cell tile t1"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell tile t2"></div>
+        <div class="cell tile t2"></div>
+        <div class="cell"></div>
+
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell tile t1"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+      </div>
+
+        <p class="grid-label">STRATEGIC</p>
+        <h4 class="grid-size">5x5</h4>
+
+      </ion-card-content>
+    </ion-card>
+
+
+
+    <ion-card 
+    class="grid-card"
+    [class.active]="selectedGrid === 6"
+    (click)="selectGrid(6)">
+      <ion-card-content>
+
+      <div class="grid-preview grid-6">
+
+        <!-- 36 cells -->
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell tile t1"></div>
+        <div class="cell tile t1"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell tile t2"></div>
+        <div class="cell tile t3"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+        <div class="cell"></div>
+        <div class="cell tile t2"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell tile t3"></div>
+
+      </div>
+
+        <p class="grid-label">EPIC</p>
+        <h4 class="grid-size">6x6</h4>
+
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
 </ion-content>
+
+
+
+<!-- FOOTER BUTTON -->
+<ion-footer class="ion-no-border">
+
+    <div class="footer-container">
+      <ion-button 
+      expand="block" 
+      class="start-btn"
+      (click)="startGame()">
+        START GAME
+        <ion-icon slot="end" name="play-outline"></ion-icon>
+      </ion-button>
+    </div>
+
+</ion-footer>

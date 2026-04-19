@@ -1,0 +1,168 @@
+/* COLOR SYSTEM sama seperti home */
+:host {
+  --bg-main: #e6b8b5;
+  --card-bg: #f2f2f2;
+  --primary: #c24e2a;
+  --text-dark: #3c3c3c;
+  --text-light: #7a7a7a;
+}
+
+
+/* BACKGROUND */
+ion-content {
+  --background: var(--bg-main);
+}
+
+
+/* HEADER */
+ion-header {
+  background: var(--bg-main);
+}
+
+ion-toolbar {
+  --background: var(--primary);
+  --border-width: 0;
+}
+
+.title-center {
+  display: flex;
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--card-bg);
+}
+
+
+
+/* CONTAINER */
+.settings-container {
+  padding: 16px 18px 30px;
+}
+
+
+
+/* CARD */
+.settings-card {
+  background: var(--card-bg);
+  border-radius: 22px;
+  padding: 14px;
+  margin-bottom: 18px;
+  box-shadow: none;
+}
+
+
+
+/* SOUND ROW */
+.settings-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+
+
+/* ICON CIRCLE */
+.icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ecd8b1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ion-icon {
+    font-size: 18px;
+    color: #8a6b2d;
+  }
+}
+
+
+
+/* TEXT */
+.settings-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.settings-desc {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 2px;
+}
+
+
+
+/* SECTION LABEL */
+.section-label {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--text-light);
+  margin-bottom: 10px;
+}
+
+
+
+/* ITEM */
+.settings-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 2px;
+}
+
+.item-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.item-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.item-subtitle {
+  font-size: 11px;
+  color: var(--text-light);
+}
+
+
+
+/* ICON */
+.settings-item ion-icon {
+  font-size: 18px;
+  color: var(--text-dark);
+}
+
+
+
+/* CLICKABLE CARD */
+.clickable {
+  padding: 2px 14px;
+}
+
+
+
+/* TOGGLE */
+ion-toggle {
+  --background: #d6d3cf;
+  --background-checked: var(--primary);
+  --handle-background: white;
+  --handle-background-checked: white;
+}
+
+
+
+/* VERSION TEXT */
+.version-text {
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #5c4b48;
+  margin-top: 10px;
+}

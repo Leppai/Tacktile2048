@@ -1,0 +1,107 @@
+<div class="overlay-container">
+
+  <!-- SCORE -->
+  <div class="score-summary">
+
+    <div>
+      <p class="score-label">
+        FINAL SCORE
+      </p>
+
+      <h1 class="score-value">
+        8,412
+      </h1>
+    </div>
+
+
+    <div class="best-score">
+      <p class="best-label">
+        BEST SCORE
+      </p>
+
+      <p class="best-value">
+        14,280
+      </p>
+    </div>
+
+  </div>
+
+
+
+  <!-- CARD -->
+  <ion-card class="gameover-card">
+
+    <div class="card-content">
+
+      <h2 class="gameover-title">
+        Game Over!
+      </h2>
+
+      <p class="gameover-desc">
+        No more moves left. You reached the 256 tile!
+      </p>
+
+
+      <!-- RETRY -->
+      <ion-button
+        expand="block"
+        class="retry-btn"
+        (click)="retry.emit()"
+      >
+        <ion-icon
+          slot="start"
+          name="refresh-outline">
+        </ion-icon>
+
+        Try Again
+      </ion-button>
+
+
+
+      <!-- SHARE -->
+      <ion-button
+        expand="block"
+        fill="outline"
+        class="share-btn"
+      >
+        <ion-icon
+          slot="start"
+          name="share-social-outline">
+        </ion-icon>
+
+        Share Score
+      </ion-button>
+
+
+    </div>
+
+  </ion-card>
+
+
+
+  <!-- MERGE INFO -->
+  <ion-card class="merge-card">
+
+    <p class="merge-label">
+      TILES MERGED
+    </p>
+
+    <h3 class="merge-value">
+      1,024
+    </h3>
+
+    <p class="merge-desc">
+      Total merges
+    </p>
+
+  </ion-card>
+
+
+
+  <!-- HINT -->
+  <p class="hint-text">
+    Swipe to move tiles and combine them!
+  </p>
+
+
+</div>

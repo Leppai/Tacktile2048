@@ -1,0 +1,229 @@
+/* COLOR SYSTEM konsisten */
+:host {
+  --bg-main: #e6b8b5;
+  --card-bg: #f2f2f2;
+  --primary: #c24e2a;
+  --text-dark: #3c3c3c;
+  --text-light: #7a7a7a;
+}
+
+
+
+/* BACKGROUND */
+ion-content {
+  --background: var(--bg-main);
+}
+
+
+
+/* HEADER */
+ion-header {
+  background: var(--bg-main);
+}
+
+ion-toolbar {
+  --background: var(--primary);
+  --border-width: 0;
+}
+
+.title-center {
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--card-bg);
+}
+
+
+
+/* CONTAINER */
+.game-container {
+  padding: 14px 18px 30px;
+}
+
+
+
+/* SCORE SECTION */
+.score-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.score-label {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #7a4a3b;
+}
+
+.score-value {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--primary);
+  margin-top: 2px;
+}
+
+
+/* LEFT */
+.left-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+
+/* RIGHT */
+.right-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+
+
+/* BACK BUTTON */
+.back-btn {
+  --background: var(--primary);
+  --border-radius: 18px;
+  height: 36px;
+  padding: 8 14px;
+  font-size: 13px;
+  text-transform: none;
+}
+
+
+
+/* NEW GAME */
+.new-game-btn {
+  --background: var(--primary);
+  --border-radius: 18px;
+  height: 36px;
+  padding: 8 14px;
+  font-size: 13px;
+  text-transform: none;
+}
+
+
+
+/* BEST SCORE */
+.best-score-card {
+  background: #e9e6e2;
+  border-radius: 18px;
+  padding: 8px 14px;
+  text-align: center;
+}
+
+.best-label {
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: var(--text-light);
+}
+
+.best-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+
+/* BOARD CONTAINER */
+.board-container {
+  background: #ece8e4;
+  border-radius: 24px;
+  padding: 14px;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+
+
+/* GRID */
+.board-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.grid-4{
+  grid-template-columns:repeat(4,1fr);
+}
+
+.grid-5{
+  grid-template-columns:repeat(5,1fr);
+}
+
+.grid-6{
+  grid-template-columns:repeat(6,1fr);
+}
+
+
+
+/* CELL */
+.cell {
+  width: 100%;
+  aspect-ratio: 1;
+  background: #d6d3cf;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+  font-size: 20px;
+  color: #5c3b2e;
+}
+
+
+
+/* TILE COLORS */
+.tile {
+  color: #5c3b2e;
+}
+
+/* warna mengikuti gaya desain */
+.t2 {
+  background: #f2d8a7;
+}
+
+.t4 {
+  background: #a8e6cf;
+}
+
+.t8 {
+  background: #f7b81f;
+  color: white;
+}
+
+.t16 {
+  background: #0f766e;
+  color: white;
+}
+
+
+/* optional warna lanjutan */
+.t32 { background:#f59e0b; color:white; }
+.t64 { background:#ea580c; color:white; }
+.t128 { background:#22c55e; color:white; }
+.t256 { background:#06b6d4; color:white; }
+.t512 { background:#3b82f6; color:white; }
+.t1024 { background:#6366f1; color:white; }
+.t2048 { background:#9333ea; color:white; }
+
+
+
+/* HINT TEXT */
+.hint-text {
+  text-align: center;
+  font-size: 13px;
+  color: #6b5a55;
+  margin-top: 26px;
+}
+
+.overlay-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}

@@ -1,0 +1,170 @@
+<!-- HEADER -->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="title-center">
+      Settings
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+
+
+<!-- CONTENT -->
+<ion-content fullscreen>
+
+  <div class="settings-container">
+
+    <!-- SOUND -->
+    <ion-card class="settings-card">
+
+      <div class="settings-row">
+
+        <div class="icon-circle">
+          <ion-icon name="volume-high-outline"></ion-icon>
+        </div>
+
+        <ion-toggle checked="sound" (ionChange)="toggleSound($event)"></ion-toggle>
+
+      </div>
+
+      <div class="settings-text">
+        <h3 class="settings-title">
+          Sound Effects
+        </h3>
+
+        <p class="settings-desc">
+          Tactile audio feedback for tile merges and spawns.
+        </p>
+      </div>
+
+    </ion-card>
+
+
+
+    <!-- VISUAL -->
+    <ion-card class="settings-card">
+
+      <p class="section-label">
+        VISUAL APPEARANCE
+      </p>
+
+
+      <!-- COLOR -->
+      <div class="settings-item">
+
+        <div class="item-left">
+
+          <ion-icon name="color-palette-outline"></ion-icon>
+
+          <div>
+            <p class="item-title">
+              Color Palette
+            </p>
+
+            <p class="item-subtitle">
+              Warm Neutrals (Active)
+            </p>
+
+          </div>
+
+        </div>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+
+      </div>
+
+
+
+      <!-- DARK MODE -->
+      <div class="settings-item">
+
+        <div class="item-left">
+
+          <ion-icon name="moon-outline"></ion-icon>
+
+          <div>
+            <p class="item-title">
+              Dark Mode
+            </p>
+
+            <p class="item-subtitle">
+              Follow System
+            </p>
+
+          </div>
+
+        </div>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+
+      </div>
+
+    </ion-card>
+
+
+
+    <!-- HOW TO PLAY -->
+    <ion-card class="settings-card clickable" (click)="openHowToPlay()">
+
+      <div class="settings-item">
+
+        <p class="item-title">
+          How To Play
+        </p>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+
+      </div>
+
+    </ion-card>
+
+
+
+    <!-- RESET -->
+    <ion-card class="settings-card clickable" (click)="resetProgress()">
+
+      <div class="settings-item">
+
+        <p class="item-title">
+          Reset Progress
+        </p>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+
+      </div>
+
+    </ion-card>
+
+
+
+    <!-- POLICY -->
+    <ion-card class="settings-card clickable" (click)="openPolicy()">
+
+      <div class="settings-item">
+
+        <p class="item-title">
+          Policy Privacy
+        </p>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+
+      </div>
+
+    </ion-card>
+
+
+
+    <!-- VERSION -->
+    <p class="version-text">
+      VERSION 2.0.48 • TACTILE LOGIC ENGINE
+    </p>
+
+  </div>
+
+</ion-content>

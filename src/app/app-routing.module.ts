@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'settings',
+    loadChildren: () => import('./pages/settings/settings.module').then( m => m.SettingsPageModule)
+  },
+  {
+    path: 'gameboard',
+    loadChildren: () => import('./pages/gameboard/gameboard.module').then( m => m.GameboardPageModule)
+  },
 ];
 
 @NgModule({

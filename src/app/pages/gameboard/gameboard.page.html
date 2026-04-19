@@ -1,0 +1,126 @@
+<!-- HEADER -->
+<ion-header class="ion-no-border">
+
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-button fill="clear">
+        <ion-icon name="apps-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="title-center">
+      2048
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="openSettings()">
+        <ion-icon name="settings-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+
+</ion-header>
+
+
+
+<!-- CONTENT -->
+<ion-content fullscreen>
+
+  <div class="game-container">
+
+
+    <!-- SCORE AREA -->
+    <div class="score-section">
+
+      <div class="left-section">
+
+        <p class="score-label">
+          SCORE
+        </p>
+
+        <h1 class="score-value">
+          {{ score }}
+        </h1>
+
+        <!-- BACK BUTTON -->
+        <ion-button
+          fill="clear"
+          class="back-btn"
+          (click)="goHome()">
+
+          <ion-icon
+            slot="start"
+            name="arrow-back-outline">
+          </ion-icon>
+          
+          Home
+
+        </ion-button>
+
+      </div>
+
+
+      <div class="right-section">
+
+        <div class="best-score-card">
+
+          <p class="best-label">
+            BEST SCORE
+          </p>
+
+          <p class="best-value">
+            {{ bestScore }}
+          </p>
+
+        </div>
+
+
+        <ion-button 
+        class="new-game-btn"
+        (click)="newGame()">
+          New Game
+        </ion-button>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- BOARD -->
+    <div
+      class="board-container"
+      (touchstart)="onTouchStart($event)"
+      (touchend)="onTouchEnd($event)">
+
+      <div
+        class="board-grid"
+        [ngClass]="'grid-'+gridSize">
+
+        <div
+          *ngFor="let tile of board"
+          class="cell"
+          [ngClass]="'t'+tile">
+
+          {{ tile || '' }}
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- INFO -->
+    <p class="hint-text">
+      Swipe to move tiles and combine them!
+    </p>
+
+
+  </div>
+
+
+
+</ion-content>
