@@ -23,10 +23,11 @@ ion-toolbar {
 }
 
 .title-center {
-  text-align: center;
+  display: flex;
+  text-align: flex-start;
   font-weight: 600;
-  color: var(--card-bg);
   font-size: 18px;
+  color: var(--card-bg);
 }
 
 
@@ -137,15 +138,19 @@ ion-toolbar {
   }
 
   .t1 {
-    background: #ff6a3d;
+    background: #f67878;
   }
 
   .t2 {
-    background: #f5b942;
+    background: #a8e6cf;
   }
 
   .t3 {
-    background: #53d1c8;
+    background: #f7b81f;
+  }
+
+  .t4 {
+    background: #0f766e;
   }
 }
 

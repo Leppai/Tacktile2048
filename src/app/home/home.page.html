@@ -7,7 +7,7 @@
       </ion-button>
     </ion-buttons>
 
-    <ion-title class="title-center">2048</ion-title>
+    <ion-title class="title-center">Tacktile2048</ion-title>
 
     <ion-buttons slot="end">
       <ion-button fill="clear" (click)="openSettings()">
@@ -58,7 +58,7 @@
         <div class="cell"></div>
         <div class="cell tile t1"></div>
         <div class="cell tile t1"></div>
-        <div class="cell"></div>
+        <div class="cell tile t3"></div>
 
         <div class="cell"></div>
         <div class="cell"></div>
@@ -96,7 +96,7 @@
 
         <div class="cell"></div>
         <div class="cell tile t1"></div>
-        <div class="cell"></div>
+        <div class="cell tile t3"></div>
         <div class="cell"></div>
         <div class="cell"></div>
 
@@ -144,14 +144,14 @@
 
         <!-- 36 cells -->
         <div class="cell"></div>
-        <div class="cell"></div>
+        <div class="cell tile t4"></div>
         <div class="cell tile t1"></div>
         <div class="cell tile t1"></div>
         <div class="cell"></div>
         <div class="cell"></div>
 
         <div class="cell"></div>
-        <div class="cell"></div>
+        <div class="cell tile t1"></div>
         <div class="cell tile t2"></div>
         <div class="cell tile t3"></div>
         <div class="cell"></div>
@@ -173,7 +173,7 @@
 
         <div class="cell"></div>
         <div class="cell"></div>
-        <div class="cell"></div>
+        <div class="cell tile t2"></div>
         <div class="cell"></div>
         <div class="cell"></div>
         <div class="cell"></div>
@@ -181,9 +181,9 @@
         <div class="cell"></div>
         <div class="cell"></div>
         <div class="cell"></div>
+        <div class="cell tile t1"></div>
         <div class="cell"></div>
         <div class="cell"></div>
-        <div class="cell tile t3"></div>
 
       </div>
 
@@ -194,6 +194,7 @@
     </ion-card>
 
   </div>
+
 
 </ion-content>
 
@@ -213,3 +214,9 @@
     </div>
 
 </ion-footer>
+
+<app-privacy-consent
+  *ngIf="showPrivacyConsent"
+  class="overlay-layer"
+  (accept)="acceptPrivacy()">
+</app-privacy-consent>

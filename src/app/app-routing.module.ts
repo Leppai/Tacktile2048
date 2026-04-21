@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'gameboard',
     loadChildren: () => import('./pages/gameboard/gameboard.module').then( m => m.GameboardPageModule)
   },
+  {
+    path: 'privacy-policy',
+    loadChildren: () => import('./pages/privacy-policy/privacy-policy.module').then( m => m.PrivacyPolicyPageModule)
+  },
 ];
 
 @NgModule({

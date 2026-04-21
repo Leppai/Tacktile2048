@@ -12,6 +12,8 @@ export class HomePage implements OnInit {
 
   selectedGrid:number = 4;
   bestScore:number = 0;
+  showHowToPlay = false;
+  showPrivacyConsent = false;
 
   constructor(
     private router:Router,
@@ -24,6 +26,55 @@ export class HomePage implements OnInit {
 
     this.selectedGrid = data.gridSize;
     this.bestScore = data.bestScore;
+    this.checkTutorial();
+
+    const accepted =
+    localStorage.getItem('tactile_privacyAccepted');
+    if(!accepted){
+      this.showPrivacyConsent = true;
+    }
+
+  }
+
+  ionViewWillEnter(){
+
+    const data = this.storage.getGameData();
+    this.selectedGrid = data.gridSize;
+    this.bestScore = data.bestScore;
+
+  }
+
+
+  acceptPrivacy(){
+
+    localStorage.setItem(
+      'tactile_privacyAccepted',
+      'true'
+    );
+
+    this.showPrivacyConsent = false;
+
+  }
+
+
+  checkTutorial() {
+
+    const hasSeenTutorial = localStorage.getItem('hasSeenTutorial');
+
+    if (!hasSeenTutorial) {
+
+      this.showHowToPlay = true;
+
+    }
+
+  }
+
+
+  closeHowToPlay() {
+
+    this.showHowToPlay = false;
+
+    localStorage.setItem('hasSeenTutorial', 'true');
 
   }
 

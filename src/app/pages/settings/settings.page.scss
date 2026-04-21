@@ -26,7 +26,7 @@ ion-toolbar {
 
 .title-center {
   display: flex;
-  text-align: center;
+  text-align: flex-start;
   font-weight: 600;
   font-size: 18px;
   color: var(--card-bg);
@@ -124,11 +124,6 @@ ion-toolbar {
   font-size: 14px;
   font-weight: 600;
   color: var(--text-dark);
-}
-
-.item-subtitle {
-  font-size: 11px;
-  color: var(--text-light);
 }
 
 

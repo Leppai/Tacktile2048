@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from 'src/app/services/storage';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-settings',
@@ -11,10 +12,12 @@ import { Router } from '@angular/router';
 export class SettingsPage implements OnInit {
 
   sound:boolean = true;
+  showHowToPlay = false;
 
   constructor(
     private router:Router,
     private storage:StorageService,
+    private alertCtrl:AlertController,
   ) {}
   
 
@@ -26,44 +29,91 @@ export class SettingsPage implements OnInit {
 
   }
 
+  async resetProgress(){
 
-  goHome(){
+    const alert =
+      await this.alertCtrl.create({
 
-    this.router.navigate(['/home']);
+      header:'Reset Progress',
+
+      message:'Score dan data game akan dihapus.',
+
+      buttons:[
+
+        {
+
+          text:'Cancel',
+
+          role:'cancel'
+
+        },
+
+        {
+
+          text:'Reset',
+
+          role:'destructive',
+
+          handler:()=>{
+
+            this.confirmReset();
+
+          }
+
+        }
+
+      ]
+
+    });
+
+    await alert.present();
+
+  }
+
+  confirmReset(){
+
+    const defaultData = {
+
+      gridSize:4,
+
+      bestScore:0
+
+    };
+
+    this.storage.saveGameData(
+      defaultData
+    );
 
   }
 
 
   toggleSound(event:any){
 
-    const settings = this.storage.getSettings();
+    this.sound =
+      event.detail.checked;
 
-    settings.sound = event.detail.checked;
+    this.storage.saveSettings({
 
-    this.storage.saveSettings(settings);
+      sound:this.sound
+
+    });
 
   }
 
 
   openHowToPlay(){
-
-    this.router.navigate(['/how-to-play']);
-
+    this.showHowToPlay = true;
   }
 
 
-  openPolicy(){
+  closeHowToPlay(){
+    this.showHowToPlay = false;
+  }
+
+
+  openPrivacyPolicy(){
 
     this.router.navigate(['/privacy-policy']);
-
-  }
-
-
-  resetProgress(){
-
-    this.storage.resetGame();
-
-    alert('Progress berhasil direset');
 
   }
 

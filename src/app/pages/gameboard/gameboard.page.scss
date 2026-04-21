@@ -27,7 +27,8 @@ ion-toolbar {
 }
 
 .title-center {
-  text-align: center;
+  display: flex;
+  text-align: flex-start;
   font-weight: 600;
   font-size: 18px;
   color: var(--card-bg);
@@ -185,7 +186,7 @@ ion-toolbar {
 
 /* warna mengikuti gaya desain */
 .t2 {
-  background: #f2d8a7;
+  background: #f67878;
 }
 
 .t4 {
@@ -211,6 +212,9 @@ ion-toolbar {
 .t512 { background:#3b82f6; color:white; }
 .t1024 { background:#6366f1; color:white; }
 .t2048 { background:#9333ea; color:white; }
+.t4096 { background:#f561c6; color:white; }
+.t8192 { background:#ee3f9c; color:white; }
+.t16384 { background:#ea3333; color:white; }
 
 
 

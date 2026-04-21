@@ -1,0 +1,125 @@
+/* COLOR SYSTEM konsisten */
+:host {
+  --primary: #c24e2a;
+  --bg-main: #e6b8b5;
+  --card-bg: #f2f2f2;
+  --text-dark: #3c3c3c;
+  --text-light: #7a7a7a;
+}
+
+
+
+/* BACKGROUND */
+ion-content {
+  --background: var(--bg-main);
+}
+
+
+
+/* HEADER */
+ion-header {
+  background: var(--bg-main);
+}
+
+ion-toolbar {
+  --background: var(--primary);
+  --border-width: 0;
+}
+
+.title-center {
+  display: flex;
+  text-align: flex-start;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--card-bg);
+}
+
+
+
+/* CONTAINER */
+.policy-container {
+  padding: 16px 18px 40px;
+}
+
+
+
+/* CARD */
+.policy-card {
+  background: var(--card-bg);
+  border-radius: 22px;
+  padding: 18px;
+
+  box-shadow: none;
+}
+
+
+
+/* TITLE */
+.policy-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-dark);
+
+  margin-bottom: 4px;
+}
+
+
+
+/* UPDATED TEXT */
+.policy-updated {
+  font-size: 12px;
+  color: var(--text-light);
+
+  margin-bottom: 16px;
+}
+
+
+
+/* SECTION */
+.policy-section {
+  margin-bottom: 16px;
+}
+
+.policy-section h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+
+  margin-bottom: 6px;
+}
+
+.policy-section p {
+  font-size: 13px;
+  color: var(--text-light);
+
+  line-height: 1.5;
+}
+
+
+
+/* LIST */
+.policy-section ul {
+  padding-left: 18px;
+  margin: 6px 0;
+}
+
+.policy-section li {
+  font-size: 13px;
+  color: var(--text-light);
+
+  margin-bottom: 2px;
+}
+
+
+
+/* FOOTER TEXT */
+.version-text {
+  text-align: center;
+
+  font-size: 11px;
+  letter-spacing: 1px;
+
+  color: #5c4b48;
+
+  margin-top: 14px;
+}

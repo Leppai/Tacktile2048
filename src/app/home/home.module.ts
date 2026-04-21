@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { PrivacyConsentComponent } from 'src/app/components/privacy-consent/privacy-consent.component';
 
 
 @NgModule({
@@ -12,8 +13,11 @@ import { HomePageRoutingModule } from './home-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
   ],
-  declarations: [HomePage]
+  declarations: [
+    HomePage,
+    PrivacyConsentComponent,
+  ]
 })
 export class HomePageModule {}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from 'src/app/services/storage';
 import { Router } from '@angular/router';
+import { SoundService } from 'src/app/services/sound';
 
 @Component({
   selector: 'app-gameboard',
@@ -11,31 +12,27 @@ import { Router } from '@angular/router';
 export class GameboardPage implements OnInit {
 
   gridSize:number = 4;
-
   board:number[] = [];
-
   score:number = 0;
-
   bestScore:number = 0;
-
   startX:number = 0;
   startY:number = 0;
+  gameOver:boolean = false;
+  totalMerge:number = 0;
 
 
   constructor(
     private router:Router,
-    private storage:StorageService
+    private storage:StorageService,
+    private sound:SoundService,
   ) {}
 
 
   ngOnInit(){
 
     const data = this.storage.getGameData();
-
     this.gridSize = data.gridSize;
-
     this.bestScore = data.bestScore;
-
     this.createBoard();
 
   }
@@ -64,6 +61,12 @@ export class GameboardPage implements OnInit {
   }
 
   newGame(){
+
+    this.gameOver = false;
+
+    this.totalMerge = 0;
+
+    this.score = 0;
 
     this.createBoard();
 
@@ -110,14 +113,74 @@ export class GameboardPage implements OnInit {
 
     if(moved){
 
+      this.sound.play('move');
+
       this.spawnTile();
 
       this.updateBestScore();
+
+      this.gameOver =
+        this.checkGameOver();
+
+      if(this.gameOver){
+
+        this.sound.play('gameover');
+
+      }
 
     }
 
   }
 
+  checkGameOver(){
+
+    // cek cell kosong
+    if(this.board.includes(0)){
+
+      return false;
+
+    }
+
+    // cek kemungkinan merge horizontal
+    for(let r=0;r<this.gridSize;r++){
+
+      for(let c=0;c<this.gridSize-1;c++){
+
+        let i = r*this.gridSize+c;
+
+        if(this.board[i] ==
+          this.board[i+1]){
+
+          return false;
+
+        }
+
+      }
+
+    }
+
+
+    // cek kemungkinan merge vertikal
+    for(let c=0;c<this.gridSize;c++){
+
+      for(let r=0;r<this.gridSize-1;r++){
+
+        let i = r*this.gridSize+c;
+
+        if(this.board[i] ==
+          this.board[i+this.gridSize]){
+
+          return false;
+
+        }
+
+      }
+
+    }
+
+    return true;
+
+  }
 
 
   mergeLine(line:number[]){
@@ -131,7 +194,7 @@ export class GameboardPage implements OnInit {
         line[i] *= 2;
 
         this.score += line[i];
-
+        this.totalMerge += 1;
         line[i+1] = 0;
 
       }

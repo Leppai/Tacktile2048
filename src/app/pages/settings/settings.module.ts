@@ -7,14 +7,18 @@ import { IonicModule } from '@ionic/angular';
 import { SettingsPageRoutingModule } from './settings-routing.module';
 
 import { SettingsPage } from './settings.page';
+import { HowToPlayComponent } from 'src/app/components/how-to-play/how-to-play.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SettingsPageRoutingModule
+    SettingsPageRoutingModule,
   ],
-  declarations: [SettingsPage]
+  declarations: [
+    SettingsPage,
+    HowToPlayComponent,
+  ]
 })
 export class SettingsPageModule {}

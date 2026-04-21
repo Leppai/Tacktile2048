@@ -1,0 +1,40 @@
+<div class="overlay-container">
+
+  <ion-card class="consent-card">
+
+
+    <p class="consent-text">
+
+      To use Tactile2048 you must confirm that you have read and agreed to our
+
+      <span
+        class="policy-link"
+        (click)="openPolicy()">
+
+        Privacy Policy
+
+      </span>.
+
+    </p>
+
+
+    <p class="consent-subtext">
+
+      Please press Continue if you agree to start using the application.
+
+    </p>
+
+
+    <ion-button
+      expand="block"
+      class="continue-btn"
+      (click)="accept.emit()">
+
+      Continue
+
+    </ion-button>
+
+
+  </ion-card>
+
+</div>

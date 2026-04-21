@@ -10,7 +10,7 @@
     </ion-buttons>
 
     <ion-title class="title-center">
-      2048
+      Tacktile2048
     </ion-title>
 
     <ion-buttons slot="end">
@@ -121,6 +121,14 @@
 
   </div>
 
+  <app-game-over
 
+    *ngIf="gameOver"
+    [score]="score"
+    [bestScore]="bestScore"
+    [totalMerge]="totalMerge"
+    (retry)="newGame()"
+
+  ></app-game-over>
 
 </ion-content>

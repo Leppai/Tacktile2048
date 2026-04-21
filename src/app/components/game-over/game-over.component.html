@@ -1,27 +1,37 @@
 <div class="overlay-container">
 
   <!-- SCORE -->
-  <div class="score-summary">
+  <div class="score-section">
 
-    <div>
-      <p class="score-label">
-        FINAL SCORE
-      </p>
+    <div class="left-section">
 
-      <h1 class="score-value">
-        8,412
-      </h1>
+        <p class="score-label">
+          SCORE
+        </p>
+
+        <h1 class="score-value">
+          {{ score }}
+        </h1>
+
+
     </div>
 
 
-    <div class="best-score">
-      <p class="best-label">
-        BEST SCORE
-      </p>
+    <div class="right-section">
 
-      <p class="best-value">
-        14,280
-      </p>
+      <div class="best-score-card">
+
+          <p class="best-label">
+            BEST SCORE
+          </p>
+
+          <p class="best-value">
+            {{ bestScore }}
+          </p>
+
+      </div>
+
+
     </div>
 
   </div>
@@ -63,13 +73,14 @@
         expand="block"
         fill="outline"
         class="share-btn"
+        (click)="goHome()"
       >
         <ion-icon
           slot="start"
-          name="share-social-outline">
+          name="home">
         </ion-icon>
 
-        Share Score
+        Home
       </ion-button>
 
 
@@ -87,7 +98,7 @@
     </p>
 
     <h3 class="merge-value">
-      1,024
+      {{ totalMerge }}
     </h3>
 
     <p class="merge-desc">
@@ -96,12 +107,6 @@
 
   </ion-card>
 
-
-
-  <!-- HINT -->
-  <p class="hint-text">
-    Swipe to move tiles and combine them!
-  </p>
 
 
 </div>

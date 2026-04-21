@@ -35,22 +35,53 @@ export class StorageService {
 
   getSettings(){
 
-    const data = localStorage.getItem(this.SETTINGS_KEY);
+    const data =
+      localStorage.getItem(this.SETTINGS_KEY);
 
-    return data ? JSON.parse(data) : {
+    if(!data){
 
-      sound:true
+      const defaultSettings = {
 
-    };
+        sound:true
+
+      };
+
+      localStorage.setItem(
+
+        this.SETTINGS_KEY,
+
+        JSON.stringify(defaultSettings)
+
+      );
+
+      return defaultSettings;
+
+    }
+
+    return JSON.parse(data);
 
   }
 
 
   saveSettings(settings:any){
 
+    const current =
+      this.getSettings();
+
+    const updated = {
+
+      ...current,
+
+      ...settings
+
+    };
+
     localStorage.setItem(
+
       this.SETTINGS_KEY,
-      JSON.stringify(settings)
+
+      JSON.stringify(updated)
+
     );
 
   }

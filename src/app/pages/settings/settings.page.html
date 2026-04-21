@@ -3,7 +3,10 @@
   <ion-toolbar>
 
     <ion-buttons slot="start">
-        <ion-back-button defaultHref="/home"></ion-back-button>
+
+      <ion-back-button defaultHref="/home">
+      </ion-back-button>
+
     </ion-buttons>
 
     <ion-title class="title-center">
@@ -29,7 +32,7 @@
           <ion-icon name="volume-high-outline"></ion-icon>
         </div>
 
-        <ion-toggle checked="sound" (ionChange)="toggleSound($event)"></ion-toggle>
+        <ion-toggle [checked]="sound" (ionChange)="toggleSound($event)"></ion-toggle>
 
       </div>
 
@@ -41,68 +44,6 @@
         <p class="settings-desc">
           Tactile audio feedback for tile merges and spawns.
         </p>
-      </div>
-
-    </ion-card>
-
-
-
-    <!-- VISUAL -->
-    <ion-card class="settings-card">
-
-      <p class="section-label">
-        VISUAL APPEARANCE
-      </p>
-
-
-      <!-- COLOR -->
-      <div class="settings-item">
-
-        <div class="item-left">
-
-          <ion-icon name="color-palette-outline"></ion-icon>
-
-          <div>
-            <p class="item-title">
-              Color Palette
-            </p>
-
-            <p class="item-subtitle">
-              Warm Neutrals (Active)
-            </p>
-
-          </div>
-
-        </div>
-
-        <ion-icon name="chevron-forward-outline"></ion-icon>
-
-      </div>
-
-
-
-      <!-- DARK MODE -->
-      <div class="settings-item">
-
-        <div class="item-left">
-
-          <ion-icon name="moon-outline"></ion-icon>
-
-          <div>
-            <p class="item-title">
-              Dark Mode
-            </p>
-
-            <p class="item-subtitle">
-              Follow System
-            </p>
-
-          </div>
-
-        </div>
-
-        <ion-icon name="chevron-forward-outline"></ion-icon>
-
       </div>
 
     </ion-card>
@@ -144,12 +85,12 @@
 
 
     <!-- POLICY -->
-    <ion-card class="settings-card clickable" (click)="openPolicy()">
+    <ion-card class="settings-card clickable" (click)="openPrivacyPolicy()">
 
       <div class="settings-item">
 
         <p class="item-title">
-          Policy Privacy
+          Privacy Policy
         </p>
 
         <ion-icon name="chevron-forward-outline"></ion-icon>
@@ -162,9 +103,14 @@
 
     <!-- VERSION -->
     <p class="version-text">
-      VERSION 2.0.48 • TACTILE LOGIC ENGINE
+      VERSION 1.0.1 • TACTILE2048
     </p>
 
   </div>
 
+  <app-how-to-play
+    *ngIf="showHowToPlay"
+    class="overlay-layer"
+    (close)="closeHowToPlay()">
+  </app-how-to-play>
 </ion-content>
