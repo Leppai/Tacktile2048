@@ -12,8 +12,8 @@ export class HomePage implements OnInit {
 
   selectedGrid:number = 4;
   bestScore:number = 0;
-  showHowToPlay = false;
   showPrivacyConsent = false;
+  showTutorial = false;
 
   constructor(
     private router:Router,
@@ -26,7 +26,7 @@ export class HomePage implements OnInit {
 
     this.selectedGrid = data.gridSize;
     this.bestScore = data.bestScore;
-    this.checkTutorial();
+    this.checkFirstInstall();
 
     const accepted =
     localStorage.getItem('tactile_privacyAccepted');
@@ -57,24 +57,25 @@ export class HomePage implements OnInit {
   }
 
 
-  checkTutorial() {
+  checkFirstInstall() {
 
-    const hasSeenTutorial = localStorage.getItem('hasSeenTutorial');
+    const hasSeenTutorial =
+      localStorage.getItem('tactile_hasSeenTutorial');
 
     if (!hasSeenTutorial) {
-
-      this.showHowToPlay = true;
-
+      this.showTutorial = true;
     }
 
   }
 
+  closeTutorial() {
 
-  closeHowToPlay() {
+    this.showTutorial = false;
 
-    this.showHowToPlay = false;
-
-    localStorage.setItem('hasSeenTutorial', 'true');
+    localStorage.setItem(
+      'tactile_hasSeenTutorial',
+      'true'
+    );
 
   }
 

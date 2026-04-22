@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package com.naltylabs.puzzle;
 
 import com.getcapacitor.BridgeActivity;
 

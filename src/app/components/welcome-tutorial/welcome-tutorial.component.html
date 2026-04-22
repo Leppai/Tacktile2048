@@ -1,0 +1,183 @@
+<div class="overlay-container">
+
+
+  <!-- SLIDER CARD -->
+  <ion-card class="howto-card">
+
+    <div class="slide-container">
+
+
+      <!-- SLIDE 1 -->
+      <div
+        class="slide"
+        *ngIf="step === 1">
+
+        <h2 class="slide-title">
+          Swipe to move the tiles in any direction (left, right, up, down)
+        </h2>
+
+
+        <div class="board-preview">
+
+          <div class="grid-4">
+
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+
+            <div class="cell"></div>
+            <div class="cell tile t2">2</div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell tile t4">4</div>
+            <div class="cell"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- SLIDE 2 -->
+      <div
+        class="slide"
+        *ngIf="step === 2">
+
+        <h2 class="slide-title">
+          When two tiles with the same number join, they merge into one
+        </h2>
+
+
+        <div class="board-preview">
+
+          <div class="grid-4">
+
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+
+            <div class="cell"></div>
+            <div class="cell tile t2">2</div>
+            <div class="cell tile t2">2</div>
+            <div class="cell tile t4">4</div>
+
+            <div class="cell"></div>
+            <div class="cell tile t16">16</div>
+            <div class="cell tile t16">16</div>
+            <div class="cell tile t32">32</div>
+
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- SLIDE 3 -->
+      <div
+        class="slide"
+        *ngIf="step === 3">
+
+        <h2 class="slide-title">
+          Join the tiles and get to the 2048 one!
+        </h2>
+
+
+        <div class="board-preview">
+
+          <div class="grid-4">
+
+            <div class="cell"></div>
+            <div class="cell tile t2">2</div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+
+            <div class="cell tile t16">16</div>
+            <div class="cell tile t4">4</div>
+            <div class="cell tile t128">128</div>
+            <div class="cell"></div>
+
+            <div class="cell tile t2048">2048</div>
+            <div class="cell tile t64">64</div>
+            <div class="cell tile t16">16</div>
+            <div class="cell tile t8">8</div>
+
+            <div class="cell tile t8">8</div>
+            <div class="cell tile t256">256</div>
+            <div class="cell tile t32">32</div>
+            <div class="cell tile t2">2</div>
+
+          </div>
+
+        </div>
+
+
+        <ion-button
+          expand="block"
+          class="play-btn"
+          (click)="finish()">
+
+          PLAY
+
+        </ion-button>
+
+      </div>
+
+
+
+      <!-- NAVIGATION -->
+      <div class="slider-nav">
+
+        <ion-button
+          fill="clear"
+          class="nav-btn"
+          (click)="prev()"
+          [disabled]="step === 1">
+
+          <ion-icon name="chevron-back"></ion-icon>
+
+        </ion-button>
+
+
+        <span class="step-indicator">
+          {{ step }}/3
+        </span>
+
+
+        <ion-button
+          fill="clear"
+          class="nav-btn"
+          (click)="next()"
+          [disabled]="step === 3">
+
+          <ion-icon name="chevron-forward"></ion-icon>
+
+        </ion-button>
+
+      </div>
+
+
+    </div>
+
+  </ion-card>
+
+
+</div>
