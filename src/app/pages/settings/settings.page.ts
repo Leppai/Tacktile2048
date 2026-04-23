@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from 'src/app/services/storage';
-import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { Browser } from '@capacitor/browser';
 
 @Component({
   selector: 'app-settings',
@@ -15,7 +15,6 @@ export class SettingsPage implements OnInit {
   showHowToPlay = false;
 
   constructor(
-    private router:Router,
     private storage:StorageService,
     private alertCtrl:AlertController,
   ) {}
@@ -111,10 +110,10 @@ export class SettingsPage implements OnInit {
   }
 
 
-  openPrivacyPolicy(){
-
-    this.router.navigate(['/privacy-policy']);
-
+  async openPrivacyPolicy() {
+    await Browser.open({
+      url: 'https://leppai.github.io/privacy2048/',
+    });
   }
 
 
