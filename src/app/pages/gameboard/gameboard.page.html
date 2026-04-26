@@ -92,7 +92,7 @@
           class="cell"
           [ngClass]="'t'+tile">
 
-          {{ tile || '' }}
+          {{ tile ? formatTile(tile) : '' }}
 
         </div>
 
