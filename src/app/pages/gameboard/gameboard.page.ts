@@ -264,7 +264,7 @@ export class GameboardPage implements OnInit {
 
   formatTile(value: number): string {
     if (value >= 10000 && value < 1000000) {
-      return (value / 10000).toFixed(1).replace('.0', '') + 'K';
+      return (value / 1000).toFixed(1).replace('.0', '') + 'K';
     }
     if (value >= 1000000) {
       return (value / 1000000).toFixed(1).replace('.0', '') + 'M';
