@@ -25,17 +25,9 @@ export class GameOverComponent {
   totalMerge:number = 0;
 
 
-  /*
-  kirim event ke parent
-  */
-
   @Output()
   retry = new EventEmitter<void>();
 
-
-  /*
-  trigger saat tombol Try Again ditekan
-  */
 
   onRetry(){
 
