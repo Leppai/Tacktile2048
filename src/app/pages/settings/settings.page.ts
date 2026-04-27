@@ -42,7 +42,6 @@ export class SettingsPage implements OnInit {
         {
 
           text:'Cancel',
-
           role:'cancel'
 
         },
@@ -50,7 +49,6 @@ export class SettingsPage implements OnInit {
         {
 
           text:'Reset',
-
           role:'destructive',
 
           handler:()=>{
@@ -74,7 +72,6 @@ export class SettingsPage implements OnInit {
     const defaultData = {
 
       gridSize:4,
-
       bestScore:0
 
     };
