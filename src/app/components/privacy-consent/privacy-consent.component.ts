@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import { Browser } from '@capacitor/browser';
 
 @Component({
   selector: 'app-privacy-consent',
@@ -12,13 +12,13 @@ export class PrivacyConsentComponent {
   @Output() accept = new EventEmitter<void>();
 
 
-  constructor(private router: Router) {}
+  constructor() {}
 
 
-  openPolicy(){
-
-    this.router.navigate(['/privacy-policy']);
-
+  async openPolicy() {
+    await Browser.open({
+      url: 'https://leppai.github.io/privacy2048/',
+    });
   }
 
 }

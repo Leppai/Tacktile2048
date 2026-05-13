@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PrivacyPolicyPageRoutingModule } from './privacy-policy-routing.module';
+import { SplashPageRoutingModule } from './splash-routing.module';
 
-import { PrivacyPolicyPage } from './privacy-policy.page';
+import { SplashPage } from './splash.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PrivacyPolicyPageRoutingModule
+    SplashPageRoutingModule
   ],
-  declarations: [PrivacyPolicyPage]
+  declarations: [SplashPage]
 })
-export class PrivacyPolicyPageModule {}
+export class SplashPageModule {}

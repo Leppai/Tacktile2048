@@ -22,6 +22,9 @@ export class SoundService {
     this.sounds.move =
       new Audio('assets/sounds/move.mp3');
 
+    this.sounds.merge =
+      new Audio('assets/sounds/merge.mp3');
+
     this.sounds.gameover =
       new Audio('assets/sounds/gameover.mp3');
 

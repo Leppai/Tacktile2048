@@ -144,7 +144,9 @@ ion-toolbar {
 /* GRID */
 .board-grid {
   display: grid;
-  gap: 8px;
+  gap: 6px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
 }
 
 .grid-4{
@@ -173,7 +175,7 @@ ion-toolbar {
   justify-content: center;
 
   font-weight: 700;
-  font-size: 20px;
+  font-size: 18px;
   color: #5c3b2e;
 }
 
@@ -185,38 +187,29 @@ ion-toolbar {
 }
 
 /* warna mengikuti gaya desain */
-.t2 {
-  background: #f67878;
-}
-
-.t4 {
-  background: #a8e6cf;
-}
-
-.t8 {
-  background: #f7b81f;
-  color: white;
-}
-
-.t16 {
-  background: #0f766e;
-  color: white;
-}
-
-
-/* optional warna lanjutan */
+.t2 {background: #f67878;}
+.t4 {background: #a8e6cf;}
+.t8 {background: #f7b81f; color: white;}
+.t16 {background: #0f766e; color: white;}
 .t32 { background:#f59e0b; color:white; }
 .t64 { background:#ea580c; color:white; }
 .t128 { background:#22c55e; color:white; }
 .t256 { background:#06b6d4; color:white; }
 .t512 { background:#3b82f6; color:white; }
 .t1024 { background:#6366f1; color:white; }
-.t2048 { background:#9333ea; color:white; }
-.t4096 { background:#f561c6; color:white; }
-.t8192 { background:#ee3f9c; color:white; }
-.t16384 { background:#ea3333; color:white; }
+.t2048 { background:#9c46ec; color:white; }
+.t4096 { background:#ee72c7; color:white; }
+.t8192 { background:#fe39a2; color:white; }
+.t16384 { background:#ef2b2b; color:white; }
+.t32768 { background:#f08716; color:white; }
+.t65536 { background:#27f03f; color:white; }
+.t131072 { background:#20f8ff; color:white; }
+.t262144 { background:#1e7bf4; color:white; }
+.t524288 { background:#f81a73; color:white; }
 
-
+.t1024, .t2048, .t4096, .t8192 {
+  font-size: 0.75em;
+}
 
 /* HINT TEXT */
 .hint-text {

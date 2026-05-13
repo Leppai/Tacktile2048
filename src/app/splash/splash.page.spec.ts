@@ -1,12 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { PrivacyPolicyPage } from './privacy-policy.page';
+import { SplashPage } from './splash.page';
 
-describe('PrivacyPolicyPage', () => {
-  let component: PrivacyPolicyPage;
-  let fixture: ComponentFixture<PrivacyPolicyPage>;
+describe('SplashPage', () => {
+  let component: SplashPage;
+  let fixture: ComponentFixture<SplashPage>;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PrivacyPolicyPage);
+    fixture = TestBed.createComponent(SplashPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

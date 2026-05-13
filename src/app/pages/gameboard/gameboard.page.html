@@ -3,12 +3,6 @@
 
   <ion-toolbar>
 
-    <ion-buttons slot="start">
-      <ion-button fill="clear">
-        <ion-icon name="apps-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-
     <ion-title class="title-center">
       Tacktile2048
     </ion-title>
@@ -46,14 +40,8 @@
 
         <!-- BACK BUTTON -->
         <ion-button
-          fill="clear"
           class="back-btn"
           (click)="goHome()">
-
-          <ion-icon
-            slot="start"
-            name="arrow-back-outline">
-          </ion-icon>
           
           Home
 
@@ -104,7 +92,7 @@
           class="cell"
           [ngClass]="'t'+tile">
 
-          {{ tile || '' }}
+          {{ tile ? formatTile(tile) : '' }}
 
         </div>
 

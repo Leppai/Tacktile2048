@@ -1,11 +1,6 @@
 <!-- HEADER -->
 <ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button fill="clear">
-        <ion-icon name="apps-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
 
     <ion-title class="title-center">Tacktile2048</ion-title>
 
@@ -26,7 +21,7 @@
     <p class="subtitle">WELCOME BACK TO</p>
 
     <h2 class="app-name">
-      Tactile<span>2048</span>
+      Tacktile<span>2048</span>
     </h2>
 
     <!-- SCORE CARD -->
@@ -94,7 +89,7 @@
 
       <div class="grid-preview grid-5">
 
-        <div class="cell"></div>
+        <div class="cell tile t1"></div>
         <div class="cell tile t1"></div>
         <div class="cell tile t3"></div>
         <div class="cell"></div>
@@ -220,3 +215,9 @@
   class="overlay-layer"
   (accept)="acceptPrivacy()">
 </app-privacy-consent>
+
+<app-welcome-tutorial
+  *ngIf="showTutorial"
+  class="overlay-layer"
+  (close)="closeTutorial()">
+</app-welcome-tutorial>

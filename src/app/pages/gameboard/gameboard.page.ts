@@ -191,6 +191,8 @@ export class GameboardPage implements OnInit {
 
       if(line[i] == line[i+1]){
 
+        this.sound.play('merge');
+
         line[i] *= 2;
 
         this.score += line[i];
@@ -259,6 +261,16 @@ export class GameboardPage implements OnInit {
 
   }
 
+
+  formatTile(value: number): string {
+    if (value >= 10000 && value < 1000000) {
+      return (value / 1000).toFixed(1).replace('.0', '') + 'K';
+    }
+    if (value >= 1000000) {
+      return (value / 1000000).toFixed(1).replace('.0', '') + 'M';
+    }
+    return value.toString();
+  }
 
 
   setLine(index:number,line:number[],dir:string){

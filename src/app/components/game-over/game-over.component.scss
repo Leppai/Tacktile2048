@@ -1,4 +1,3 @@
-/* COLOR SYSTEM konsisten */
 :host {
   --bg-main: #e6b8b5;
   --card-bg: #f2f2f2;
@@ -141,7 +140,7 @@
   display: flex;
   flex-direction: column;
 
-  padding: 70px 18px 30px; /* beri ruang header */
+  padding: 95px 18px 30px; /* beri ruang header */
 
   backdrop-filter: blur(6px);
   background: rgba(230, 184, 181, 0.75);

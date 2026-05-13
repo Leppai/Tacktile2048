@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { PrivacyConsentComponent } from 'src/app/components/privacy-consent/privacy-consent.component';
+import { WelcomeTutorialComponent } from 'src/app/components/welcome-tutorial/welcome-tutorial.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { PrivacyConsentComponent } from 'src/app/components/privacy-consent/priv
   declarations: [
     HomePage,
     PrivacyConsentComponent,
+    WelcomeTutorialComponent,
   ]
 })
 export class HomePageModule {}
