@@ -1,11 +1,4 @@
-import {
-  Component,
-  OnInit,
-  AfterViewInit,
-  OnDestroy,
-  ViewChild,
-  ElementRef,
-  ChangeDetectorRef,
+import {Component, OnInit, AfterViewInit, OnDestroy, ViewChild, ElementRef, ChangeDetectorRef,
 } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -47,7 +40,6 @@ export class GameboardPage implements OnInit, AfterViewInit, OnDestroy {
   totalMerge: number = 0;
 
   gameOver: boolean = false;
-
 
   startX: number = 0;
   startY: number = 0;
@@ -104,19 +96,10 @@ export class GameboardPage implements OnInit, AfterViewInit, OnDestroy {
   }
 
 
-  // ====================================================
-  // TILE SIZE MEASUREMENT
-  // ====================================================
-
   private measureTileSize(): void {
     const grid =
       this.boardGridEl.nativeElement as HTMLElement;
 
-    /*
-     * Ukur cell-bg pertama yang sudah dirender oleh
-     * CSS Grid. Hasilnya adalah ukuran tile yang
-     * tepat untuk layar saat ini.
-     */
     const cellEl =
       grid.querySelector('.cell-bg') as HTMLElement;
 
@@ -126,9 +109,6 @@ export class GameboardPage implements OnInit, AfterViewInit, OnDestroy {
   }
 
 
-  // ====================================================
-  // NAVIGATION
-  // ====================================================
 
   openSettings(): void {
     this.router.navigate(['/settings']);
@@ -139,36 +119,18 @@ export class GameboardPage implements OnInit, AfterViewInit, OnDestroy {
   }
 
 
-  // ====================================================
-  // BOARD HELPERS
-  // ====================================================
-
-  /**
-   * Array sel background untuk *ngFor pada template.
-   */
   get bgCells(): number[] {
     return new Array(
       this.gridSize * this.gridSize
     ).fill(0);
   }
 
-  /**
-   * trackBy function untuk *ngFor tiles.
-   *
-   * Kunci dari sistem animasi ini:
-   * Angular menggunakan elemen DOM yang SAMA saat tile
-   * berpindah posisi (bukan destroy + recreate baru).
-   * Ketika style transform berubah pada elemen yang sama,
-   * CSS transition otomatis menganimasikan perpindahannya.
-   */
+
   trackTile(index: number, tile: Tile): number {
     return tile.id;
   }
 
-  /**
-   * Sinkronkan board[] dari tiles[] aktif,
-   * agar logika checkGameOver bisa berjalan.
-   */
+
   private syncBoardFromTiles(): void {
     this.board = new Array(
       this.gridSize * this.gridSize
@@ -352,7 +314,6 @@ export class GameboardPage implements OnInit, AfterViewInit, OnDestroy {
 
     this.isAnimating = true;
 
-    // Mainkan suara gerakan.
     this.sound.play('move');
 
 

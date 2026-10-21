@@ -7,14 +7,11 @@
   --text-light: #7a7a7a;
 }
 
-
-/* BACKGROUND */
 ion-content {
   --background: var(--bg-main);
 }
 
 
-/* HEADER */
 ion-header {
   background: var(--bg-main);
 }
@@ -33,15 +30,11 @@ ion-toolbar {
 }
 
 
-
-/* CONTAINER */
 .settings-container {
   padding: 16px 18px 30px;
 }
 
 
-
-/* CARD */
 .settings-card {
   background: var(--card-bg);
   border-radius: 22px;
@@ -51,8 +44,6 @@ ion-toolbar {
 }
 
 
-
-/* SOUND ROW */
 .settings-row {
   display: flex;
   justify-content: space-between;
@@ -61,8 +52,6 @@ ion-toolbar {
 }
 
 
-
-/* ICON CIRCLE */
 .icon-circle {
   width: 36px;
   height: 36px;
@@ -86,8 +75,6 @@ ion-toolbar {
 }
 
 
-
-/* SECTION LABEL */
 .section-label {
   font-size: 11px;
   letter-spacing: 1px;
@@ -96,8 +83,6 @@ ion-toolbar {
 }
 
 
-
-/* ITEM */
 .settings-item {
   display: flex;
   align-items: center;
@@ -119,23 +104,17 @@ ion-toolbar {
 }
 
 
-
-/* ICON */
 .settings-item ion-icon {
   font-size: 18px;
   color: var(--text-dark);
 }
 
 
-
-/* CLICKABLE CARD */
 .clickable {
   padding: 2px 14px;
 }
 
 
-
-/* TOGGLE */
 ion-toggle {
   --background: #d6d3cf;
   --background-checked: var(--primary);
