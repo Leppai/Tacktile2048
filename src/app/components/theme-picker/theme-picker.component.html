@@ -1,0 +1,161 @@
+<div class="theme-overlay" (click)="closePicker()">
+
+  <div class="theme-picker" (click)="$event.stopPropagation()">
+
+    <!-- HEADER -->
+    <div class="theme-header">
+
+      <div>
+        <h2>Choose Theme</h2>
+        <p>Customize your game appearance</p>
+      </div>
+
+      <button class="close-button" (click)="closePicker()">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+
+    </div>
+
+
+    <!-- THEME LIST -->
+    <div class="theme-list">
+
+      <!-- CLASSIC -->
+      <button
+        class="theme-option"
+        [class.active]="selectedTheme === 'classic'"
+        (click)="selectTheme('classic')">
+
+        <div class="theme-preview classic-preview">
+          <div class="preview-grid">
+            <span>2</span>
+            <span>4</span>
+            <span>8</span>
+            <span>16</span>
+          </div>
+        </div>
+
+        <div class="theme-info">
+          <h3>Classic</h3>
+          <p>Classic 2048 colors</p>
+        </div>
+
+        <div class="check-icon" *ngIf="selectedTheme === 'classic'">
+          <ion-icon name="checkmark-outline"></ion-icon>
+        </div>
+
+      </button>
+
+
+      <!-- OCEAN -->
+      <button
+        class="theme-option"
+        [class.active]="selectedTheme === 'ocean'"
+        (click)="selectTheme('ocean')">
+
+        <div class="theme-preview ocean-preview">
+          <div class="preview-grid">
+            <span>2</span>
+            <span>4</span>
+            <span>8</span>
+            <span>16</span>
+          </div>
+        </div>
+
+        <div class="theme-info">
+          <h3>Ocean</h3>
+          <p>Cool blue colors</p>
+        </div>
+
+        <div class="check-icon" *ngIf="selectedTheme === 'ocean'">
+          <ion-icon name="checkmark-outline"></ion-icon>
+        </div>
+
+      </button>
+
+
+      <!-- NEON -->
+      <button
+        class="theme-option"
+        [class.active]="selectedTheme === 'neon'"
+        (click)="selectTheme('neon')">
+
+        <div class="theme-preview neon-preview">
+          <div class="preview-grid">
+            <span>2</span>
+            <span>4</span>
+            <span>8</span>
+            <span>16</span>
+          </div>
+        </div>
+
+        <div class="theme-info">
+          <h3>Neon</h3>
+          <p>Dark gaming colors</p>
+        </div>
+
+        <div class="check-icon" *ngIf="selectedTheme === 'neon'">
+          <ion-icon name="checkmark-outline"></ion-icon>
+        </div>
+
+      </button>
+
+
+      <!-- FOREST -->
+      <button
+        class="theme-option"
+        [class.active]="selectedTheme === 'forest'"
+        (click)="selectTheme('forest')">
+
+        <div class="theme-preview forest-preview">
+          <div class="preview-grid">
+            <span>2</span>
+            <span>4</span>
+            <span>8</span>
+            <span>16</span>
+          </div>
+        </div>
+
+        <div class="theme-info">
+          <h3>Forest</h3>
+          <p>Natural green colors</p>
+        </div>
+
+        <div class="check-icon" *ngIf="selectedTheme === 'forest'">
+          <ion-icon name="checkmark-outline"></ion-icon>
+        </div>
+
+      </button>
+
+
+      <!-- DARK -->
+      <button
+        class="theme-option"
+        [class.active]="selectedTheme === 'dark'"
+        (click)="selectTheme('dark')">
+
+        <div class="theme-preview dark-preview">
+          <div class="preview-grid">
+            <span>2</span>
+            <span>4</span>
+            <span>8</span>
+            <span>16</span>
+          </div>
+        </div>
+
+        <div class="theme-info">
+          <h3>Dark</h3>
+          <p>Dark minimal colors</p>
+        </div>
+
+        <div class="check-icon" *ngIf="selectedTheme === 'dark'">
+          <ion-icon name="checkmark-outline"></ion-icon>
+        </div>
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

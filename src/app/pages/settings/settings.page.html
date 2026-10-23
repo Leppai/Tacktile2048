@@ -23,6 +23,39 @@
 
   <div class="settings-container">
 
+    <!-- THEME -->
+    <ion-card
+      class="settings-card clickable"
+      (click)="openThemeSettings()">
+
+      <div class="settings-item">
+
+        <div class="item-left">
+
+          <div class="icon-circle theme-icon">
+            <ion-icon name="color-palette-outline"></ion-icon>
+          </div>
+
+          <p class="item-title">
+            Theme
+          </p>
+
+        </div>
+
+        <div class="theme-right">
+
+          <span class="current-theme">
+            {{ currentTheme | titlecase }}
+          </span>
+
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+
+        </div>
+
+      </div>
+
+    </ion-card>
+
     <ion-card class="settings-card">
 
       <div class="settings-row">
@@ -103,6 +136,13 @@
     </p>
 
   </div>
+
+  <app-theme-picker
+    *ngIf="showThemePicker"
+    class="overlay-layer"
+    (close)="closeThemePicker()"
+    (themeSelected)="selectTheme($event)">
+  </app-theme-picker>
 
   <app-how-to-play
     *ngIf="showHowToPlay"

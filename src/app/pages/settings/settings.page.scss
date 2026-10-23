@@ -43,6 +43,26 @@ ion-toolbar {
   box-shadow: none;
 }
 
+.theme-icon {
+  background: #e4d5f7;
+
+  ion-icon {
+    color: #7651a9;
+  }
+}
+
+.theme-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.current-theme {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
 
 .settings-row {
   display: flex;

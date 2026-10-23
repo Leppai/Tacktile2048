@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { StorageService } from 'src/app/services/storage';
 import { AlertController } from '@ionic/angular';
 import { Browser } from '@capacitor/browser';
+import {
+  ThemeService,
+  ThemeName
+} from 'src/app/services/theme';
 
 @Component({
   selector: 'app-settings',
@@ -11,12 +15,15 @@ import { Browser } from '@capacitor/browser';
 })
 export class SettingsPage implements OnInit {
 
+  showThemePicker = false;
+  currentTheme: ThemeName = 'classic';
   sound:boolean = true;
   showHowToPlay = false;
 
   constructor(
     private storage:StorageService,
     private alertCtrl:AlertController,
+    private themeService: ThemeService,
   ) {}
   
 
@@ -26,6 +33,23 @@ export class SettingsPage implements OnInit {
 
     this.sound = settings.sound;
 
+    this.currentTheme = this.themeService.getTheme();
+
+  }
+
+  openThemeSettings() {
+    this.showThemePicker = true;
+  }
+
+  closeThemePicker() {
+    this.showThemePicker = false;
+  }
+
+  selectTheme(theme: string) {
+    this.currentTheme = theme as ThemeName;
+    this.themeService.setTheme(this.currentTheme);
+
+    this.showThemePicker = false;
   }
 
   async resetProgress(){

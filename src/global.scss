@@ -1,44 +1,523 @@
 /*
  * App Global CSS
  * ----------------------------------------------------------------------------
- * Put style rules here that you want to apply globally. These styles are for
- * the entire app and not just one component. Additionally, this file can be
- * used as an entry point to import other CSS/Sass files to be included in the
- * output CSS.
- * For more information on global stylesheets, visit the documentation:
- * https://ionicframework.com/docs/layout/global-stylesheets
+ * Global styles untuk seluruh aplikasi Tacktile2048.
  */
 
-/* Core CSS required for Ionic components to work properly */
+/* =========================================================
+   IONIC CORE
+========================================================= */
+
 @import "@ionic/angular/css/core.css";
 
-/* Basic CSS for apps built with Ionic */
 @import "@ionic/angular/css/normalize.css";
 @import "@ionic/angular/css/structure.css";
 @import "@ionic/angular/css/typography.css";
 @import "@ionic/angular/css/display.css";
 
-/* Optional CSS utils that can be commented out */
 @import "@ionic/angular/css/padding.css";
 @import "@ionic/angular/css/float-elements.css";
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-/**
+/*
  * Ionic Dark Mode
- * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
+ * ---------------------------------------------------------
+ * Kita tidak menggunakan dark.system.css untuk sistem tema
+ * game karena tema akan dikontrol oleh ThemeService.
  */
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import "@ionic/angular/css/palettes/dark.system.css";
+/* @import "@ionic/angular/css/palettes/dark.system.css"; */
 
+
+/* =========================================================
+   GLOBAL THEME SYSTEM
+========================================================= */
+
+:root {
+
+  --bg-main: #e6b8b5;
+  --card-bg: #f2f2f2;
+
+  --primary: #c24e2a;
+  --primary-light: #d86b4a;
+  --primary-dark: #9f3e21;
+
+  --text-dark: #3c3c3c;
+  --text-light: #7a7a7a;
+  --text-white: #ffffff;
+
+  --border-color: #dedede;
+
+  /* -------------------------------------------------------
+     GAMEBOARD
+  ------------------------------------------------------- */
+
+  --board-bg: #ece8e4;
+  --cell-bg: #d6d3cf;
+
+  --board-shadow: rgba(60, 60, 60, 0.15);
+
+  /* -------------------------------------------------------
+     SCORE
+  ------------------------------------------------------- */
+
+  --score-bg: #e9e6e2;
+  --score-label: #7a4a3b;
+  --score-value: #3c3c3c;
+
+  --best-score-bg: #e9e6e2;
+  --best-label: #7a4a3b;
+  --best-value: #3c3c3c;
+
+  /* -------------------------------------------------------
+     HOME
+  ------------------------------------------------------- */
+
+  --hero-subtitle: #b05a3c;
+  --section-title: #3c3c3c;
+  --section-subtitle: #7a7a7a;
+
+  --grid-card-bg: #f2f2f2;
+  --grid-card-border: transparent;
+  --grid-card-active-border: #ff6a3d;
+
+  --grid-preview-bg: #dedede;
+  --grid-preview-cell: #e9e9e9;
+
+  /* -------------------------------------------------------
+     BUTTON
+  ------------------------------------------------------- */
+
+  --button-bg: #c24e2a;
+  --button-text: #ffffff;
+
+  --button-secondary-bg: #ffffff;
+  --button-secondary-text: #c24e2a;
+
+  /* -------------------------------------------------------
+     HINT & TILE TEXT
+  ------------------------------------------------------- */
+
+  --hint-text: #6b5a55;
+  --tile-text-dark: #5c3b2e;
+  --tile-text-light: #ffffff;
+
+  /* -------------------------------------------------------
+     TILE
+  ------------------------------------------------------- */
+
+  --tile-2: #f67878;
+  --tile-4: #a8e6cf;
+  --tile-8: #f7b81f;
+  --tile-16: #0f766e;
+  --tile-32: #f59e0b;
+  --tile-64: #ea580c;
+  --tile-128: #22c55e;
+  --tile-256: #06b6d4;
+  --tile-512: #3b82f6;
+  --tile-1024: #6366f1;
+  --tile-2048: #9c46ec;
+  --tile-4096: #ee72c7;
+  --tile-8192: #fe39a2;
+  --tile-16384: #ef2b2b;
+  --tile-32768: #f08716;
+  --tile-65536: #27f03f;
+  --tile-131072: #20f8ff;
+  --tile-262144: #1e7bf4;
+  --tile-524288: #f81a73;
+}
+
+
+/* =========================================================
+   CLASSIC THEME
+========================================================= */
+
+[data-theme="classic"] {
+
+  --bg-main: #e6b8b5;
+  --card-bg: #f2f2f2;
+
+  --primary: #c24e2a;
+  --primary-light: #d86b4a;
+  --primary-dark: #9f3e21;
+
+  --text-dark: #3c3c3c;
+  --text-light: #7a7a7a;
+  --text-white: #ffffff;
+
+  --border-color: #dedede;
+
+  --board-bg: #ece8e4;
+  --cell-bg: #d6d3cf;
+
+  --board-shadow: rgba(60, 60, 60, 0.15);
+
+  --score-bg: #e9e6e2;
+  --score-label: #7a4a3b;
+  --score-value: #3c3c3c;
+
+  --best-score-bg: #e9e6e2;
+  --best-label: #7a4a3b;
+  --best-value: #3c3c3c;
+
+  --hero-subtitle: #b05a3c;
+  --section-title: #3c3c3c;
+  --section-subtitle: #7a7a7a;
+
+  --grid-card-bg: #f2f2f2;
+  --grid-card-border: transparent;
+  --grid-card-active-border: #ff6a3d;
+
+  --grid-preview-bg: #dedede;
+  --grid-preview-cell: #e9e9e9;
+
+  --button-bg: #c24e2a;
+  --button-text: #ffffff;
+
+  --button-secondary-bg: #ffffff;
+  --button-secondary-text: #c24e2a;
+
+  --hint-text: #6b5a55;
+
+  --tile-text-dark: #5c3b2e;
+  --tile-text-light: #ffffff;
+
+  --tile-2: #f67878;
+  --tile-4: #a8e6cf;
+  --tile-8: #f7b81f;
+  --tile-16: #0f766e;
+  --tile-32: #f59e0b;
+  --tile-64: #ea580c;
+  --tile-128: #22c55e;
+  --tile-256: #06b6d4;
+  --tile-512: #3b82f6;
+  --tile-1024: #6366f1;
+  --tile-2048: #9c46ec;
+  --tile-4096: #ee72c7;
+  --tile-8192: #fe39a2;
+  --tile-16384: #ef2b2b;
+  --tile-32768: #f08716;
+  --tile-65536: #27f03f;
+  --tile-131072: #20f8ff;
+  --tile-262144: #1e7bf4;
+  --tile-524288: #f81a73;
+}
+
+
+/* =========================================================
+   OCEAN THEME
+========================================================= */
+
+[data-theme="ocean"] {
+
+  --bg-main: #dceff7;
+  --card-bg: #f5fbfd;
+
+  --primary: #1976a8;
+  --primary-light: #3c94c2;
+  --primary-dark: #125a80;
+
+  --text-dark: #17384a;
+  --text-light: #668493;
+  --text-white: #ffffff;
+
+  --border-color: #c8e0ea;
+
+  --board-bg: #b9d9e8;
+  --cell-bg: #9cc5d8;
+
+  --board-shadow: rgba(30, 85, 110, 0.18);
+
+  --score-bg: #d2e7ef;
+  --score-label: #46758c;
+  --score-value: #17384a;
+
+  --best-score-bg: #d2e7ef;
+  --best-label: #46758c;
+  --best-value: #17384a;
+
+  --hero-subtitle: #4285a4;
+  --section-title: #17384a;
+  --section-subtitle: #668493;
+
+  --grid-card-bg: #f5fbfd;
+  --grid-card-border: transparent;
+  --grid-card-active-border: #2196c5;
+
+  --grid-preview-bg: #c4dfe9;
+  --grid-preview-cell: #e4f1f5;
+
+  --button-bg: #1976a8;
+  --button-text: #ffffff;
+
+  --button-secondary-bg: #ffffff;
+  --button-secondary-text: #1976a8;
+
+  --hint-text: #527887;
+
+  --tile-text-dark: #24485a;
+  --tile-text-light: #ffffff;
+
+  --tile-2: #bde7f5;
+  --tile-4: #8bd3e6;
+  --tile-8: #55b9d5;
+  --tile-16: #258eb3;
+  --tile-32: #1d7698;
+  --tile-64: #17627f;
+  --tile-128: #2da58a;
+  --tile-256: #39b9a6;
+  --tile-512: #3286c4;
+  --tile-1024: #5367d9;
+  --tile-2048: #7454c9;
+  --tile-4096: #a052c7;
+  --tile-8192: #c94fae;
+  --tile-16384: #d9476b;
+  --tile-32768: #df713f;
+  --tile-65536: #43b95c;
+  --tile-131072: #35c8d0;
+  --tile-262144: #2874cf;
+  --tile-524288: #b83e91;
+}
+
+
+/* =========================================================
+   NEON THEME
+========================================================= */
+
+[data-theme="neon"] {
+
+  --bg-main: #111018;
+  --card-bg: #1b1825;
+
+  --primary: #9c4dff;
+  --primary-light: #b875ff;
+  --primary-dark: #7133c4;
+
+  --text-dark: #ffffff;
+  --text-light: #aaa5b8;
+  --text-white: #ffffff;
+
+  --border-color: #332c43;
+
+  --board-bg: #171321;
+  --cell-bg: #29233a;
+
+  --board-shadow: rgba(0, 0, 0, 0.4);
+
+  --score-bg: #241e33;
+  --score-label: #b875ff;
+  --score-value: #ffffff;
+
+  --best-score-bg: #241e33;
+  --best-label: #b875ff;
+  --best-value: #ffffff;
+
+  --hero-subtitle: #b875ff;
+  --section-title: #ffffff;
+  --section-subtitle: #aaa5b8;
+
+  --grid-card-bg: #1b1825;
+  --grid-card-border: #332c43;
+  --grid-card-active-border: #d64de8;
+
+  --grid-preview-bg: #211c2f;
+  --grid-preview-cell: #302947;
+
+  --button-bg: #9c4dff;
+  --button-text: #ffffff;
+
+  --button-secondary-bg: #241e33;
+  --button-secondary-text: #d69aff;
+
+  --hint-text: #aaa5b8;
+
+  --tile-text-dark: #ffffff;
+  --tile-text-light: #ffffff;
+
+  --tile-2: #302747;
+  --tile-4: #563d8c;
+  --tile-8: #8d4de8;
+  --tile-16: #d64de8;
+  --tile-32: #ee4dbd;
+  --tile-64: #ff3d8d;
+  --tile-128: #ff5b5b;
+  --tile-256: #ff8a3d;
+  --tile-512: #ffc43d;
+  --tile-1024: #b8ff3d;
+  --tile-2048: #4dff88;
+  --tile-4096: #3dffe0;
+  --tile-8192: #3dd5ff;
+  --tile-16384: #3d8bff;
+  --tile-32768: #654dff;
+  --tile-65536: #a34dff;
+  --tile-131072: #d44dff;
+  --tile-262144: #ff4dd2;
+  --tile-524288: #ff4d7d;
+}
+
+
+/* =========================================================
+   FOREST THEME
+========================================================= */
+
+[data-theme="forest"] {
+
+  --bg-main: #dfeedd;
+  --card-bg: #f4f8f2;
+
+  --primary: #4e8757;
+  --primary-light: #70a477;
+  --primary-dark: #37643e;
+
+  --text-dark: #2f4634;
+  --text-light: #718576;
+  --text-white: #ffffff;
+
+  --border-color: #c8dcc8;
+
+  --board-bg: #b8d0b7;
+  --cell-bg: #94b795;
+
+  --board-shadow: rgba(40, 80, 45, 0.18);
+
+  --score-bg: #d3e5d0;
+  --score-label: #52745b;
+  --score-value: #2f4634;
+
+  --best-score-bg: #d3e5d0;
+  --best-label: #52745b;
+  --best-value: #2f4634;
+
+  --hero-subtitle: #52745b;
+  --section-title: #2f4634;
+  --section-subtitle: #718576;
+
+  --grid-card-bg: #f4f8f2;
+  --grid-card-border: transparent;
+  --grid-card-active-border: #4e8757;
+
+  --grid-preview-bg: #c8ddc6;
+  --grid-preview-cell: #e6f0e4;
+
+  --button-bg: #4e8757;
+  --button-text: #ffffff;
+
+  --button-secondary-bg: #ffffff;
+  --button-secondary-text: #4e8757;
+
+  --hint-text: #617565;
+
+  --tile-text-dark: #38523d;
+  --tile-text-light: #ffffff;
+
+  --tile-2: #dcebd9;
+  --tile-4: #b8d8b4;
+  --tile-8: #74a878;
+  --tile-16: #4e8757;
+  --tile-32: #3f7548;
+  --tile-64: #31653a;
+  --tile-128: #6cae72;
+  --tile-256: #3e9b72;
+  --tile-512: #37a58f;
+  --tile-1024: #4b9cc1;
+  --tile-2048: #527fc1;
+  --tile-4096: #6c72c4;
+  --tile-8192: #8968b7;
+  --tile-16384: #a35c9f;
+  --tile-32768: #b95778;
+  --tile-65536: #c46b52;
+  --tile-131072: #c79246;
+  --tile-262144: #9aa94a;
+  --tile-524288: #4b9b63;
+}
+
+
+/* =========================================================
+   DARK THEME
+========================================================= */
+
+[data-theme="dark"] {
+
+  --bg-main: #111111;
+  --card-bg: #1c1c1c;
+
+  --primary: #8b8b8b;
+  --primary-light: #aaaaaa;
+  --primary-dark: #666666;
+
+  --text-dark: #ffffff;
+  --text-light: #aaaaaa;
+  --text-white: #ffffff;
+
+  --border-color: #333333;
+
+  --board-bg: #222222;
+  --cell-bg: #303030;
+
+  --board-shadow: rgba(0, 0, 0, 0.5);
+
+  --score-bg: #252525;
+  --score-label: #aaaaaa;
+  --score-value: #ffffff;
+
+  --best-score-bg: #252525;
+  --best-label: #aaaaaa;
+  --best-value: #ffffff;
+
+  --hero-subtitle: #aaaaaa;
+  --section-title: #ffffff;
+  --section-subtitle: #aaaaaa;
+
+  --grid-card-bg: #1c1c1c;
+  --grid-card-border: #333333;
+  --grid-card-active-border: #999999;
+
+  --grid-preview-bg: #2b2b2b;
+  --grid-preview-cell: #3a3a3a;
+
+  --button-bg: #777777;
+  --button-text: #ffffff;
+
+  --button-secondary-bg: #252525;
+  --button-secondary-text: #ffffff;
+
+  --hint-text: #999999;
+
+  --tile-text-dark: #ffffff;
+  --tile-text-light: #ffffff;
+
+  --tile-2: #333333;
+  --tile-4: #444444;
+  --tile-8: #555555;
+  --tile-16: #666666;
+  --tile-32: #777777;
+  --tile-64: #888888;
+  --tile-128: #999999;
+  --tile-256: #aaaaaa;
+  --tile-512: #bbbbbb;
+  --tile-1024: #cccccc;
+  --tile-2048: #dddddd;
+  --tile-4096: #eeeeee;
+  --tile-8192: #d4d4d4;
+  --tile-16384: #c2c2c2;
+  --tile-32768: #b0b0b0;
+  --tile-65536: #9e9e9e;
+  --tile-131072: #8c8c8c;
+  --tile-262144: #7a7a7a;
+  --tile-524288: #686868;
+}
+
+
+/* =========================================================
+   CUSTOM EXIT ALERT
+========================================================= */
 
 .custom-exit-alert {
-  --background: #ffffff;
+  --background: var(--card-bg);
   --backdrop-opacity: 0.5;
 
   .alert-wrapper {
@@ -46,30 +525,41 @@
 
     border: none !important;
     outline: none !important;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+
+    box-shadow:
+      0 10px 25px rgba(0, 0, 0, 0.15) !important;
   }
 
   .alert-head {
-    display: none; 
+    display: none;
   }
 
   .alert-message {
     padding: 36px 20px 24px 20px !important;
+
     text-align: center;
+
     font-size: 16px;
     font-weight: 600;
-    color: #121212;
+
+    color: var(--text-dark);
+
     display: flex;
     flex-direction: column;
     align-items: center;
 
     &::before {
       content: '';
+
       display: block;
+
       width: 50px;
       height: 50px;
+
       margin-bottom: 16px;
+
       background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%23c24e2a' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z'/></svg>");
+
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -78,24 +568,36 @@
 
   .alert-button-group {
     padding: 10px 20px 24px 20px;
+
     display: flex;
-    gap: 12px; 
+
+    gap: 12px;
+
     justify-content: space-between;
 
     button.alert-button {
-      flex: 1; 
+      flex: 1;
+
       margin: 0;
+
       border-radius: 10px;
+
       font-weight: 700;
+
       height: 48px;
+
       font-size: 15px;
-      text-transform: none; 
-      padding: 0 !important; 
-      
+
+      text-transform: none;
+
+      padding: 0 !important;
+
       .alert-button-inner {
         display: flex !important;
+
         justify-content: center !important;
         align-items: center !important;
+
         width: 100%;
         height: 100%;
       }
@@ -103,14 +605,18 @@
 
     .btn-tidak {
       background: transparent !important;
-      color: #c24e2a !important;
-      border: 2px solid #c24e2a !important;
+
+      color: var(--primary) !important;
+
+      border: 2px solid var(--primary) !important;
     }
 
     .btn-ya {
-      background: #c24e2a !important;
-      color: #ffffff !important;
-      border: 2px solid #c24e2a !important;
+      background: var(--primary) !important;
+
+      color: var(--button-text) !important;
+
+      border: 2px solid var(--primary) !important;
     }
   }
 }

@@ -8,6 +8,7 @@ import { SettingsPageRoutingModule } from './settings-routing.module';
 
 import { SettingsPage } from './settings.page';
 import { HowToPlayComponent } from 'src/app/components/how-to-play/how-to-play.component';
+import { ThemePickerComponent } from 'src/app/components/theme-picker/theme-picker.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { HowToPlayComponent } from 'src/app/components/how-to-play/how-to-play.c
   declarations: [
     SettingsPage,
     HowToPlayComponent,
+    ThemePickerComponent,
   ]
 })
 export class SettingsPageModule {}
